@@ -29,7 +29,7 @@
       border-radius: 14px;
       padding: 28px 18px 22px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-      animation: fadeUp .4s ease;
+      animation: fadeUp .35s ease;
       text-align: center;
     }
 
@@ -41,7 +41,7 @@
     h1 {
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: 23px;
       line-height: 1.15;
       letter-spacing: 0.8px;
       color: #d90000;
@@ -55,7 +55,7 @@
       border-radius: 10px;
       background: #f7f7f7;
       border: 2px solid #e0e0e0;
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
       color: #111;
       cursor: pointer;
@@ -75,24 +75,28 @@
   <div class="box">
 
     <h1>
-      Primeiramente…<br>
-      qual é o seu gênero?
+      Você já perdeu chances<br>
+      por insegurança?
     </h1>
 
-    <div class="option" onclick="proximo('homem')">
-      👨 Homem
+    <div class="option" onclick="proximo('sim_varias')">
+      ☹️ Sim, várias vezes… e fiquei puto comigo mesmo
     </div>
 
-    <div class="option" onclick="proximo('mulher')">
-      👩 Mulher
+    <div class="option" onclick="proximo('algumas')">
+      😐 Algumas vezes, tentei disfarçar
+    </div>
+
+    <div class="option" onclick="proximo('nao')">
+      😎 Não, sempre faço acontecer
     </div>
 
   </div>
 
   <script>
     function proximo(resposta) {
-      // localStorage.setItem('genero', resposta);
-      window.location.href = "quiz3.html";
+      // localStorage.setItem('perda', resposta);
+      window.location.href = "quiz6.html";
     }
   </script>
 

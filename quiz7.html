@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz Carnaval</title>
+  <title>Analisando...</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
@@ -27,10 +27,10 @@
       width: 100%;
       background: #fff;
       border-radius: 14px;
-      padding: 28px 18px 22px;
+      padding: 36px 20px 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-      animation: fadeUp .4s ease;
       text-align: center;
+      animation: fadeUp .35s ease;
     }
 
     @keyframes fadeUp {
@@ -42,58 +42,63 @@
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
       font-size: 24px;
-      line-height: 1.15;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
       color: #d90000;
       margin-bottom: 22px;
     }
 
-    .option {
+    .progress {
       width: 100%;
-      padding: 16px;
-      margin-bottom: 14px;
+      height: 12px;
+      background: #eee;
       border-radius: 10px;
-      background: #f7f7f7;
-      border: 2px solid #e0e0e0;
-      font-size: 17px;
-      font-weight: 700;
-      color: #111;
-      cursor: pointer;
-      transition: all .15s ease;
+      overflow: hidden;
+      margin-bottom: 18px;
     }
 
-    .option:hover,
-    .option:active {
-      background: #ffd400;
-      border-color: #ffd400;
-      transform: scale(1.02);
+    .bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ffd400, #ff0000);
+      transition: width .4s ease;
+    }
+
+    .percent {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111;
     }
   </style>
 </head>
 <body>
 
   <div class="box">
+    <h1>Analisando suas respostas…</h1>
 
-    <h1>
-      Primeiramente…<br>
-      qual é o seu gênero?
-    </h1>
-
-    <div class="option" onclick="proximo('homem')">
-      👨 Homem
+    <div class="progress">
+      <div class="bar" id="bar"></div>
     </div>
 
-    <div class="option" onclick="proximo('mulher')">
-      👩 Mulher
-    </div>
-
+    <div class="percent" id="percent">0%</div>
   </div>
 
   <script>
-    function proximo(resposta) {
-      // localStorage.setItem('genero', resposta);
-      window.location.href = "quiz3.html";
-    }
+    let progress = 0;
+    const bar = document.getElementById('bar');
+    const percent = document.getElementById('percent');
+
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 9) + 6; // sobe irregular
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        setTimeout(() => {
+          window.location.href = "quiz8.html";
+        }, 600);
+      }
+      bar.style.width = progress + "%";
+      percent.innerText = progress + "%";
+    }, 450);
   </script>
 
 </body>

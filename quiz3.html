@@ -29,7 +29,7 @@
       border-radius: 14px;
       padding: 28px 18px 22px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-      animation: fadeUp .4s ease;
+      animation: fadeUp .35s ease;
       text-align: center;
     }
 
@@ -75,24 +75,31 @@
   <div class="box">
 
     <h1>
-      Primeiramente…<br>
-      qual é o seu gênero?
+      Qual é a sua idade?
     </h1>
 
-    <div class="option" onclick="proximo('homem')">
-      👨 Homem
+    <div class="option" onclick="proximo('18-20')">
+      18–20 anos
     </div>
 
-    <div class="option" onclick="proximo('mulher')">
-      👩 Mulher
+    <div class="option" onclick="proximo('21-25')">
+      21–25 anos
+    </div>
+
+    <div class="option" onclick="proximo('26-30')">
+      26–30 anos
+    </div>
+
+    <div class="option" onclick="proximo('30+')">
+      30+ anos
     </div>
 
   </div>
 
   <script>
     function proximo(resposta) {
-      // localStorage.setItem('genero', resposta);
-      window.location.href = "quiz3.html";
+      // localStorage.setItem('idade', resposta);
+      window.location.href = "quiz4.html";
     }
   </script>
 
