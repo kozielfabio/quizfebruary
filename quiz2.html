@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Carnaval</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, #111 0%, #000 70%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 420px;
+      width: 100%;
+      background: rgba(0,0,0,0.88);
+      border-radius: 18px;
+      padding: 34px 22px;
+      box-shadow: 0 0 45px rgba(255, 0, 80, 0.35);
+      animation: fadeUp .6s ease;
+      text-align: center;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      color: #ff004f;
+      margin-bottom: 28px;
+    }
+
+    .option {
+      background: #111;
+      border: 2px solid #222;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .option:hover {
+      background: #ff004f;
+      border-color: #ff004f;
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(255,0,80,.7);
+    }
+
+    .small {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #aaa;
+      opacity: .85;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+
+    <h1>
+      Primeiramente…<br>
+      qual é o seu gênero?
+    </h1>
+
+    <div class="option" onclick="next('homem')">
+      👨 Homem
+    </div>
+
+    <div class="option" onclick="next('mulher')">
+      👩 Mulher
+    </div>
+
+
+  </div>
+
+  <script>
+    function next(resposta) {
+      // localStorage.setItem('genero', resposta);
+      // window.location.href = "quiz3.html";
+      alert("Resposta registrada 👀");
+    }
+  </script>
+
+</body>
+</html>
