@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agora é com você</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .box {
+      max-width: 420px;
+      width: 100%;
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 18px 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+      animation: fadeUp .35s ease;
+      text-align: center;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: 1px;
+      color: #d90000;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .alert {
+      background: #ffd400;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 800;
+      margin: 16px 0;
+    }
+
+    .cta {
+      margin-top: 18px;
+      width: 100%;
+      padding: 18px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #ff0000, #d90000);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 24px rgba(217,0,0,.6);
+    }
+
+    .cta:active {
+      transform: scale(0.97);
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+
+    <h1>Agora é decisão</h1>
+
+    <p>
+      Você já entendeu que o problema **não é aparência, sorte ou dinheiro**.
+      É saber **o que fazer no momento certo**.
+    </p>
+
+    <p>
+      Enquanto você hesita,  
+      outros caras **agem simples e levam vantagem**.
+    </p>
+
+    <div class="alert">
+      ⚠️ O Carnaval não espera você criar coragem.
+    </div>
+
+    <p>
+      Ou você entra preparado…  
+      ou vai passar mais um ano **só olhando**.
+    </p>
+
+    <button class="cta" onclick="irVenda()">
+      QUERO ENTRAR PREPARADO
+    </button>
+
+    <div class="small">
+      🔥 Oferta com desconto ativa agora
+    </div>
+
+  </div>
+
+  <script>
+    function irVenda() {
+      window.location.href = "https://hack-do-carnaval.vercel.app";
+    }
+  </script>
+
+</body>
+</html>
