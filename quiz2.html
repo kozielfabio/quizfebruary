@@ -5,68 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz Carnaval</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- FONTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      background: #ffffff;
-      color: #111;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f7f7f7, #ffffff);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
+      padding: 20px;
+      color: #111;
     }
 
+    /* CARD */
     .box {
-      max-width: 420px;
       width: 100%;
+      max-width: 420px;
       background: #fff;
-      border-radius: 14px;
-      padding: 28px 18px 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-      animation: fadeUp .4s ease;
+      border-radius: 18px;
+      padding: 32px 22px 26px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
       text-align: center;
+      animation: fadeUp .35s ease;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    /* TITULO */
     h1 {
       font-family: 'Anton', sans-serif;
-      text-transform: uppercase;
-      font-size: 24px;
+      font-size: 26px;
       line-height: 1.15;
-      letter-spacing: 0.8px;
-      color: #d90000;
-      margin-bottom: 22px;
+      letter-spacing: 1px;
+      color: #d80000;
+      margin-bottom: 26px;
+      text-transform: uppercase;
     }
 
+    /* OPÇÕES */
     .option {
       width: 100%;
-      padding: 16px;
-      margin-bottom: 14px;
-      border-radius: 10px;
-      background: #f7f7f7;
-      border: 2px solid #e0e0e0;
+      padding: 18px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: #f6f6f6;
+      border: 2px solid #e5e5e5;
       font-size: 17px;
-      font-weight: 700;
-      color: #111;
+      font-weight: 800;
       cursor: pointer;
-      transition: all .15s ease;
+      transition: all .18s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .option:hover,
+    .option:hover {
+      background: #ffe600;
+      border-color: #ffe600;
+      transform: translateY(-2px);
+    }
+
     .option:active {
-      background: #ffd400;
-      border-color: #ffd400;
-      transform: scale(1.02);
+      transform: scale(0.97);
+    }
+
+    /* MOBILE FINO */
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .option {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
