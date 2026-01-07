@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carnaval ou Humilhação?</title>
 
-  <!-- FONTES MODERNAS -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- FONTES DIFERENTONAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -18,124 +17,126 @@
 
     body {
       min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f7f7f7, #ffffff);
-      color: #111;
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(circle at top, #ffffff 0%, #f1f1f1 45%, #eaeaea 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 22px;
+      color: #111;
     }
 
-    /* CARD PRINCIPAL */
     .box {
       width: 100%;
       max-width: 420px;
-      background: #fff;
-      border-radius: 18px;
+      background: #ffffff;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
-      animation: fadeUp .45s ease;
+      box-shadow:
+        0 30px 60px rgba(0,0,0,0.18),
+        inset 0 0 0 1px rgba(0,0,0,0.05);
+      animation: enter .45s ease;
     }
 
-    @keyframes fadeUp {
+    @keyframes enter {
       from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(40px) scale(0.96);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
-    /* CONTEÚDO */
     .content {
-      padding: 26px 22px;
+      padding: 28px 24px;
       text-align: center;
     }
 
     h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 26px;
-      line-height: 1.15;
-      letter-spacing: 1px;
-      color: #d80000;
-      margin-bottom: 14px;
-      text-transform: uppercase;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: 1.4px;
+      color: #c80000;
+      margin-bottom: 16px;
     }
 
     .highlight {
       display: inline-block;
-      background: #ffe600;
-      color: #111;
-      padding: 4px 8px;
-      border-radius: 6px;
-      margin-top: 6px;
+      background: #000;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-size: 20px;
     }
 
     p {
-      font-size: 15.5px;
-      line-height: 1.5;
-      color: #333;
-      margin-bottom: 14px;
+      font-size: 16.5px;
+      line-height: 1.55;
+      color: #222;
+      margin-bottom: 16px;
+      font-weight: 500;
     }
 
-    /* IMAGEM */
     .img-wrapper {
+      padding: 8px 0 14px;
       display: flex;
       justify-content: center;
-      padding: 6px 0 12px;
     }
 
     .img-wrapper img {
-      width: 78%;
-      max-width: 280px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      width: 80%;
+      max-width: 300px;
+      border-radius: 18px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.25);
     }
 
-    /* BOTÃO */
     .cta {
-      margin-top: 12px;
       width: 100%;
-      padding: 18px;
+      margin-top: 18px;
+      padding: 20px;
       border: none;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #ff0000, #ff5a00);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ff0000, #ff7a00);
       color: #fff;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      letter-spacing: 0.8px;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(255,0,0,0.35);
-      transition: all .2s ease;
+      box-shadow:
+        0 18px 40px rgba(255,0,0,0.45),
+        inset 0 -4px 0 rgba(0,0,0,0.15);
+      transition: all .18s ease;
     }
 
     .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 38px rgba(255,0,0,0.45);
+      transform: translateY(-3px);
+      box-shadow:
+        0 24px 55px rgba(255,0,0,0.55),
+        inset 0 -4px 0 rgba(0,0,0,0.15);
     }
 
     .cta:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
     }
 
     .small {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 12.5px;
-      color: #777;
+      color: #666;
+      letter-spacing: 0.3px;
     }
 
-    /* MOBILE FINO */
     @media (max-width: 380px) {
       h1 {
-        font-size: 24px;
+        font-size: 30px;
       }
 
-      p {
-        font-size: 15px;
+      .highlight {
+        font-size: 18px;
       }
     }
   </style>
@@ -144,7 +145,6 @@
 
   <div class="box">
 
-    <!-- HEADLINE -->
     <div class="content">
       <h1>
         O CARNAVAL CHEGOU…<br>
@@ -152,12 +152,10 @@
       </h1>
     </div>
 
-    <!-- IMAGEM -->
     <div class="img-wrapper">
       <img src="src/img/imagemincio.jpg" alt="Cara comum beijando uma mulher linda no carnaval">
     </div>
 
-    <!-- COPY -->
     <div class="content">
       <p>
         Enquanto os caras tão beijando <strong>3 numa noite</strong>,
