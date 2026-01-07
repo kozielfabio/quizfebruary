@@ -27,7 +27,7 @@
       width: 100%;
       background: #fff;
       border-radius: 14px;
-      padding: 28px 18px 22px;
+      padding: 26px 18px 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
       animation: fadeUp .35s ease;
       text-align: center;
@@ -43,38 +43,46 @@
       text-transform: uppercase;
       font-size: 24px;
       line-height: 1.15;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: #d90000;
       margin-bottom: 16px;
     }
 
     p {
-      font-size: 16px;
-      line-height: 1.45;
+      font-size: 15.5px;
+      line-height: 1.5;
       margin-bottom: 14px;
+      color: #222;
     }
 
     .alert {
       background: #ffd400;
-      padding: 12px;
+      padding: 14px;
       border-radius: 10px;
       font-weight: 800;
-      margin: 16px 0;
+      margin: 18px 0;
+      line-height: 1.35;
     }
 
     .cta {
-      margin-top: 18px;
+      margin-top: 22px;
       width: 100%;
       padding: 18px;
       border-radius: 14px;
       border: none;
       background: linear-gradient(135deg, #ff0000, #d90000);
       color: #fff;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 900;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 0 24px rgba(217,0,0,.6);
+      box-shadow: 0 12px 30px rgba(217,0,0,.45);
+      transition: all .18s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(217,0,0,.55);
     }
 
     .cta:active {
@@ -83,7 +91,7 @@
 
     .small {
       margin-top: 10px;
-      font-size: 13px;
+      font-size: 12.5px;
       color: #666;
     }
   </style>
@@ -95,13 +103,13 @@
     <h1>Agora é decisão</h1>
 
     <p>
-      Você já entendeu que o problema **não é aparência, sorte ou dinheiro**.
-      É saber **o que fazer no momento certo**.
+      Você já entendeu que o problema <strong>não é aparência, sorte ou dinheiro</strong>.
+      É saber <strong>o que fazer no momento certo</strong>.
     </p>
 
     <p>
       Enquanto você hesita,  
-      outros caras **agem simples e levam vantagem**.
+      outros caras <strong>agem simples e levam vantagem</strong>.
     </p>
 
     <div class="alert">
@@ -110,7 +118,7 @@
 
     <p>
       Ou você entra preparado…  
-      ou vai passar mais um ano **só olhando**.
+      ou vai passar mais um ano <strong>só olhando</strong>.
     </p>
 
     <button class="cta" onclick="irVenda()">

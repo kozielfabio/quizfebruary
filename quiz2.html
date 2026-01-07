@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz Carnaval</title>
 
-  <!-- FONTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- FONTES DIFERENTONAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -18,85 +17,87 @@
 
     body {
       min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f7f7f7, #ffffff);
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(circle at top, #ffffff 0%, #f1f1f1 45%, #eaeaea 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 22px;
       color: #111;
     }
 
-    /* CARD */
     .box {
       width: 100%;
       max-width: 420px;
-      background: #fff;
-      border-radius: 18px;
-      padding: 32px 22px 26px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 34px 24px 28px;
+      box-shadow:
+        0 30px 60px rgba(0,0,0,0.18),
+        inset 0 0 0 1px rgba(0,0,0,0.05);
       text-align: center;
-      animation: fadeUp .35s ease;
+      animation: enter .4s ease;
     }
 
-    @keyframes fadeUp {
+    @keyframes enter {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(36px) scale(0.96);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
-    /* TITULO */
     h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 26px;
-      line-height: 1.15;
-      letter-spacing: 1px;
-      color: #d80000;
-      margin-bottom: 26px;
-      text-transform: uppercase;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: 1.4px;
+      color: #c80000;
+      margin-bottom: 28px;
     }
 
-    /* OPÇÕES */
     .option {
       width: 100%;
-      padding: 18px;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: #f6f6f6;
-      border: 2px solid #e5e5e5;
-      font-size: 17px;
-      font-weight: 800;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      background: #f2f2f2;
+      border: none;
+      font-size: 18px;
+      font-weight: 700;
       cursor: pointer;
       transition: all .18s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
+      box-shadow:
+        inset 0 0 0 1px rgba(0,0,0,0.08),
+        0 10px 20px rgba(0,0,0,0.08);
     }
 
     .option:hover {
-      background: #ffe600;
-      border-color: #ffe600;
-      transform: translateY(-2px);
+      background: #000;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow:
+        0 18px 35px rgba(0,0,0,0.35);
     }
 
     .option:active {
-      transform: scale(0.97);
+      transform: scale(0.95);
     }
 
-    /* MOBILE FINO */
     @media (max-width: 380px) {
       h1 {
-        font-size: 24px;
+        font-size: 30px;
       }
 
       .option {
-        font-size: 16px;
+        font-size: 17px;
       }
     }
   </style>

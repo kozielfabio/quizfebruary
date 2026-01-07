@@ -42,7 +42,7 @@
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
       font-size: 24px;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: #d90000;
       margin-bottom: 22px;
     }
@@ -60,7 +60,7 @@
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #ffd400, #ff0000);
-      transition: width .4s ease;
+      border-radius: 10px;
     }
 
     .percent {
@@ -83,22 +83,36 @@
   </div>
 
   <script>
-    let progress = 0;
     const bar = document.getElementById('bar');
     const percent = document.getElementById('percent');
 
-    const interval = setInterval(() => {
-      progress += Math.floor(Math.random() * 9) + 6; // sobe irregular
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(interval);
+    const duration = 2200; // rápido, não entedia
+    const start = performance.now();
+
+    function animate(time) {
+      const elapsed = time - start;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // easing suave (sem tranco)
+      const eased = progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      const value = Math.floor(eased * 100);
+
+      bar.style.width = value + '%';
+      percent.textContent = value + '%';
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
         setTimeout(() => {
           window.location.href = "quiz8.html";
-        }, 600);
+        }, 500);
       }
-      bar.style.width = progress + "%";
-      percent.innerText = progress + "%";
-    }, 450);
+    }
+
+    requestAnimationFrame(animate);
   </script>
 
 </body>
