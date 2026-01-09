@@ -3,49 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Analisando...</title>
+  <title>Quiz Carnaval</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Montserrat:wght@400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin:0; padding:0; }
 
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      background: #ffffff;
-      color: #111;
+      font-family: 'Space Grotesk', sans-serif;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
+      padding: 16px;
+      color: #111;
     }
 
     .box {
       max-width: 420px;
       width: 100%;
       background: #fff;
-      border-radius: 14px;
-      padding: 36px 20px 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+      border-radius: 22px;
+      padding: 36px 24px 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
       text-align: center;
-      animation: fadeUp .35s ease;
+      animation: fade .35s ease;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fade {
+      from { opacity:0; transform: translateY(20px); }
+      to { opacity:1; transform: translateY(0); }
     }
 
     h1 {
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 1.2px;
+      color: #c80000;
+      margin-bottom: 26px;
       text-transform: uppercase;
-      font-size: 24px;
-      letter-spacing: 0.8px;
-      color: #d90000;
-      margin-bottom: 22px;
     }
+
+    .option {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-radius: 18px;
+      background: #f2f2f2;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .18s;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 10px 22px rgba(0,0,0,.08);
+    }
+
+    .option:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ====== ANALISANDO ====== */
+
+    .hidden { display: none; }
 
     .progress {
       width: 100%;
@@ -64,15 +87,36 @@
     }
 
     .percent {
+      font-family: 'Montserrat', sans-serif;
       font-size: 18px;
       font-weight: 800;
-      color: #111;
+    }
+
+    .analisando h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 24px;
+      letter-spacing: .8px;
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
+  <!-- QUIZ 7 -->
+  <div class="box" id="quiz">
+    <h1>
+      De 0 a 100…<br>
+      o quanto você ficaria <span style="color:#000">PUTO</span><br>
+      se passar mais um Carnaval sozinho?
+    </h1>
+
+    <div class="option" onclick="responder('0_25')">😐 0–25% — Nem ligo tanto</div>
+    <div class="option" onclick="responder('26_50')">😤 26–50% — Ia ficar incomodado</div>
+    <div class="option" onclick="responder('51_75')">😡 51–75% — Ia ficar MUITO PUTO</div>
+    <div class="option" onclick="responder('76_100')">🤬 76–100% — Não aceito passar por isso de novo</div>
+  </div>
+
+  <!-- ANALISANDO -->
+  <div class="box hidden analisando" id="loading">
     <h1>Analisando suas respostas…</h1>
 
     <div class="progress">
@@ -83,36 +127,46 @@
   </div>
 
   <script>
-    const bar = document.getElementById('bar');
-    const percent = document.getElementById('percent');
+    function responder(valor) {
+      localStorage.setItem('raiva_carnaval', valor);
 
-    const duration = 2200; // rápido, não entedia
-    const start = performance.now();
+      document.getElementById('quiz').classList.add('hidden');
+      document.getElementById('loading').classList.remove('hidden');
 
-    function animate(time) {
-      const elapsed = time - start;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // easing suave (sem tranco)
-      const eased = progress < 0.5
-        ? 2 * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-      const value = Math.floor(eased * 100);
-
-      bar.style.width = value + '%';
-      percent.textContent = value + '%';
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setTimeout(() => {
-          window.location.href = "quiz8.html";
-        }, 500);
-      }
+      iniciarAnimacao();
     }
 
-    requestAnimationFrame(animate);
+    function iniciarAnimacao() {
+      const bar = document.getElementById('bar');
+      const percent = document.getElementById('percent');
+
+      const duration = 2200;
+      const start = performance.now();
+
+      function animate(time) {
+        const elapsed = time - start;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const eased = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        const value = Math.floor(eased * 100);
+
+        bar.style.width = value + '%';
+        percent.textContent = value + '%';
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setTimeout(() => {
+            window.location.href = "quiz8.html";
+          }, 500);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
   </script>
 
 </body>
