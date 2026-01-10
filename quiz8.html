@@ -27,7 +27,7 @@
       width: 100%;
       background: #fff;
       border-radius: 14px;
-      padding: 26px 18px 24px;
+      padding: 26px 18px 28px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.14);
       animation: fadeUp .35s ease;
       text-align: center;
@@ -45,7 +45,7 @@
       line-height: 1.15;
       letter-spacing: 0.8px;
       color: #d90000;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     p {
@@ -56,23 +56,24 @@
     }
 
     .block {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
-    .highlight {
-      background: #ffd400;
-      padding: 14px 14px;
-      border-radius: 10px;
+    .sentence {
+      font-size: 17px;
       font-weight: 800;
-      margin: 22px 0;
-      line-height: 1.4;
+      margin: 18px 0;
+    }
+
+    .impact {
+      margin-top: 22px;
     }
 
     .depoimentos {
-      margin: 18px 0 10px;
+      margin: 26px 0 26px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 14px;
     }
 
     .depoimentos img {
@@ -86,29 +87,65 @@
       object-fit: cover;
     }
 
+    .loss p {
+      margin-bottom: 10px;
+    }
+
+    /* ===== ÁREA DE TRANSIÇÃO PARA O CLIQUE ===== */
+    .transition {
+      margin: 18px 0 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .arrow {
+      font-size: 20px;
+      margin-bottom: 8px;
+      animation: bounce 1.4s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ===== CTA OTIMIZADO ===== */
     .cta {
-      margin-top: 22px;
+      margin-top: 10px;
       width: 100%;
-      padding: 18px;
-      border-radius: 14px;
+      padding: 20px;
+      border-radius: 16px;
       border: none;
       background: linear-gradient(135deg, #ff0000, #d90000);
       color: #fff;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 900;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(217,0,0,.45);
+      box-shadow: 0 14px 34px rgba(217,0,0,.5);
       transition: all .18s ease;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(217,0,0,.45); }
+      70% { box-shadow: 0 0 0 14px rgba(217,0,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(217,0,0,0); }
     }
 
     .cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 36px rgba(217,0,0,.55);
     }
 
     .cta:active {
       transform: scale(0.97);
+    }
+
+    .micro {
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: #555;
     }
   </style>
 </head>
@@ -116,31 +153,26 @@
 
   <div class="box">
 
-    <h1>Resultado Parcial</h1>
+    <h1>🎯 SEU DIAGNÓSTICO É CLARO:</h1>
 
     <div class="block">
-      <p>Se você já tentou puxar papo e ficou sem assunto?</p>
-      <p>Viu ela te olhando, mas travou na hora de agir?</p>
-      <p>Chegou perto e não soube o que falar?</p>
-      <p><strong>Ou pior…</strong> tentou e tomou um fora na frente de todo mundo?</p>
+      <p>Você não perde mulher por aparência, dinheiro ou sorte.</p>
+
+      <p class="sentence">
+        Você perde porque trava nos primeiros segundos
+      </p>
+
+      <p>que é exatamente onde a atração nasce ou morre.</p>
+
+      <p class="impact"><strong>No Carnaval, isso é fatal!</strong></p>
     </div>
 
     <div class="block">
-      <p>Saiba que você não é o único, pois 90% dos caras passam pelo mesmo!</p>
-
       <p>
-        Enquanto alguns caras parecem “ter algo a mais”,  
-        a verdade é simples: eles sabem <strong>ativar atração, presença e liderança</strong> no momento certo.
+        Quem sabe o que falar, como chegar e quando avançar<br>
+        não disputa atenção.<br>
+        👉 <strong>É escolhido.</strong>
       </p>
-
-      <p>
-        Homem que entende desejo e emoção nunca vai depender de sorte, bebida, dinheiro ou aparência.
-      </p>
-    </div>
-
-    <div class="highlight">
-      No Carnaval, quem entende desejo feminino<br>
-      não disputa atenção — <strong>é disputado</strong>.
     </div>
 
     <div class="depoimentos">
@@ -149,9 +181,34 @@
       <img src="src/img/depoimento2.jpeg" alt="Depoimento">
     </div>
 
+    <div class="block loss">
+      <p><strong>⚠️ SE VOCÊ NÃO CORRIGIR ISSO AGORA:</strong></p>
+      <p>Vai hesitar de novo</p>
+      <p>Vai perder oportunidades fáceis</p>
+      <p>Vai ver outro cara pegar a mina que você queria</p>
+      <p>
+        <strong>
+          E o pior:<br>
+          vai sair pensando “ano que vem eu resolvo”.
+        </strong>
+      </p>
+    </div>
+
+    <!-- TRANSIÇÃO MENTAL PARA O CLIQUE -->
+    <div class="transition">
+      Se você chegou até aqui, o próximo passo é óbvio.
+    </div>
+    <div class="arrow">⬇️</div>
+
     <button class="cta" onclick="proximo()">
-      EU QUERO ESSA VANTAGEM
+      CONTINUAR
     </button>
+    <div class="micro">
+      <div class="micro">
+  Continue para ver a solução
+</div>
+
+    </div>
 
   </div>
 
